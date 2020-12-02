@@ -1,0 +1,57 @@
+jasypt:
+  encryptor:
+    bean: stringEncryptor
+spring:
+  profiles:
+    active: local
+
+
+--- # local
+spring:
+  profiles: local
+  pattern:
+    console: "%d %-5level %logger{30}:%line - %msg%n"
+  thymeleaf:
+    prefix: classpath:/templates/
+    check-template-location: true
+    suffix: .html
+    mode: HTML
+    cache: false
+    template-resolver-order: 0
+amazon:
+  aws:
+    region: ap-northeast-2
+    accesskey: ENC(mwSs+XkQZOj/BLkGkcLSYJyllkDj/M0Op0Y573xy8u/DWVqSWQCZOKdjMYgU/XdX)
+    secretkey: ENC(4QQC1TbrGmEnwsjwHVQmI8bJxS/gVtFMJlTTZrp0WLGdDzySzYMwxRe3+eLockqRO6JdX/4zVynuHSO8RBq13g==)
+    bucketName: transcribevoicebucket
+microsoft:
+  azure:
+    region: koreacentral
+    key: ENC(yEYGyJzlNT8kreZcSQjrkTnNE9f1Gw3PryN5eWE4vICgQEsRt9CVbdSqVg9Wz9FzIxgUNAbQbfvrR4ja07PWNQ==)
+
+
+--- # dev
+spring:
+  profiles: dev
+  pattern:
+    console: "%d %-5level %logger{30}:%line - %msg%n"
+  thymeleaf:
+    prefix: classpath:/templates/
+    check-template-location: true
+    suffix: .html
+    mode: HTML
+    cache: false
+    template-resolver-order: 0
+amazon:
+  aws:
+    region: ap-northeast-2
+    accesskey: ENC(mwSs+XkQZOj/BLkGkcLSYJyllkDj/M0Op0Y573xy8u/DWVqSWQCZOKdjMYgU/XdX)
+    secretkey: ENC(4QQC1TbrGmEnwsjwHVQmI8bJxS/gVtFMJlTTZrp0WLGdDzySzYMwxRe3+eLockqRO6JdX/4zVynuHSO8RBq13g==)
+    bucketName: transcribevoicebucket
+microsoft:
+  azure:
+    region: koreacentral
+    key: ENC(yEYGyJzlNT8kreZcSQjrkTnNE9f1Gw3PryN5eWE4vICgQEsRt9CVbdSqVg9Wz9FzIxgUNAbQbfvrR4ja07PWNQ==)
+server:
+  port: 8800
+
